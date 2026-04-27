@@ -28,7 +28,7 @@ The "Pro Move" is running this via Docker to avoid dependency hell.
 3. 💻 Manual Installation
 If you prefer to run it bare-metal, ensure you have Go 1.21+ installed and the required tools in your $PATH.
 ```bash
-   git clone [https://github.com/YourUsername/OmniRecon.git](https://github.com/YourUsername/OmniRecon.git)
+   git clone https://github.com/JrBlackRose/OmniRecon.git
    cd OmniRecon
    chmod +x run_recon.sh
    ./run_recon.sh -d target.com -w wordlists/custom_subdomains.txt
