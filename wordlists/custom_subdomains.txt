@@ -1,0 +1,10 @@
+dev
+staging
+api-v1
+api-v2
+test
+vpn
+admin
+portal
+secure
+backup
