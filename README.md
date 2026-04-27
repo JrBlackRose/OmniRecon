@@ -20,3 +20,38 @@ The "Pro Move" is running this via Docker to avoid dependency hell.
 1. **Build the image:**
    ```bash
    docker build -t omnirecon .
+2. Run the pipeline:
+(Mounts your current directory to save the output results locally)
+```bash
+   docker run --rm -v $(pwd):/app/results omnirecon -d target.com
+```
+3. 💻 Manual Installation
+If you prefer to run it bare-metal, ensure you have Go 1.21+ installed and the required tools in your $PATH.
+```bash
+   git clone [https://github.com/YourUsername/OmniRecon.git](https://github.com/YourUsername/OmniRecon.git)
+   cd OmniRecon
+   chmod +x run_recon.sh
+   ./run_recon.sh -d target.com -w wordlists/custom_subdomains.txt
+```
+4. 📂 Output Structure
+Upon completion, OmniRecon generates a timestamped directory containing:
+
+ - subdomains.txt - All discovered subdomains.
+
+ - live_hosts.txt - Subdomains responding on ports 80/443 with status codes.
+
+ - urls.txt - Cleaned list of live URLs.
+
+ - /screenshots/ - PNG captures of every live web application.
+
+
+
+⚠️ Disclaimer
+This tool is for educational purposes and authorized security testing only. Do not use this against systems you do not own or have explicit permission to test.
+### 5. Final Setup Steps
+
+1.  Initialize a Git repository: `git init`
+2.  Add an MIT `LICENSE` file (standard for open source).
+3.  Commit these files and push to a clean GitHub repository.
+
+By framing this project with clean code, modern containerization, and a highly polished README, you turn a simple Bash script into a compelling, professional engineering artifact.
